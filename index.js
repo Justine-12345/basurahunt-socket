@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 
 const io = new Server(server, {
     cors: {
-        origin: "https://basurahunt-socket.onrender.com/",
+        origin: "https://basurahunt-socket.onrender.com",
         methods: ["GET", "POST"],
     },
 });
