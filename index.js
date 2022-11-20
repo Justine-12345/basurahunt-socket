@@ -1,7 +1,6 @@
 const express = require('express');
 const http = require("http");
 const { Server } = require("socket.io");
-const { isPromise } = require('util/types');
 const PORT = process.env.PORT || 3000;
 const app = express();
 
