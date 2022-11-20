@@ -4,9 +4,18 @@ const { Server } = require("socket.io");
 const PORT = process.env.PORT || 3000;
 const app = express();
 
+app.use((req,res,next)=>{
+  res.setHeader('Access-Control-Allow-Origin','*');
+  res.setHeader('Access-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
+  res.setHeader('Access-Control-Allow-Methods','Content-Type','Authorization');
+  next(); 
+})
+
+
 const server = app.listen(PORT, () => {
     console.log(`server started on port:' ${PORT}`);
 });
+
 
 app.get('/', (req, res) => {
     res.write(`<h1>Your Ports is ${PORT}</h1>`);
